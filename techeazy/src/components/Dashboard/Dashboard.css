@@ -1,0 +1,145 @@
+/* Base layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and borders in width and height */
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%; /* Ensure full width */
+  }
+  
+  .dashboard {
+    display: grid;
+    grid-template-areas:
+      'navbar navbar'
+      'sidebar content'
+      'footer footer';
+    grid-template-columns: 300px 1fr; /* Increased sidebar width */
+    grid-template-rows: auto 1fr auto;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    background-color: #f0f2f5;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    grid-area: navbar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e2f;
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-brand h1 {
+    font-size: 1.8rem;
+  }
+  
+  .navbar-links ul {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navbar-links li {
+    list-style: none;
+    cursor: pointer;
+    color: #d1d1e9;
+  }
+  
+  .navbar-links li:hover {
+    color: white;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #2e2e38;
+    color: #d1d1e9;
+    padding: 2rem;
+    height: 100%; /* Full height */
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .sidebar ul li:hover {
+    color: white;
+  }
+  
+  /* Content styles */
+  .content {
+    grid-area: content;
+    padding: 2rem;
+    background-color: #f0f2f5;
+    overflow-y: auto; /* Scrollable content if it overflows */
+  }
+  
+  .content-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .content-header p {
+    font-size: 1rem;
+    color: #7d7d7d;
+  }
+  
+  .widgets {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Allow widgets to wrap in smaller screens */
+  }
+  
+  .widget {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allow widgets to expand */
+    min-width: 250px; /* Minimum width for responsive design */
+    max-width: 300px; /* Maximum width for widgets */
+    text-align: center;
+  }
+  
+  .widget h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .widget p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e1e2f;
+  }
+  
+  /* Chart styles */
+  .chart-container {
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer styles */
+  .footer {
+    grid-area: footer;
+    background-color: #1e1e2f;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
