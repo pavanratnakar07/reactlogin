@@ -11,6 +11,8 @@ const Dashboard = () => {
   });
 
   // Simulate fetching data from an API
+
+  // cr
   useEffect(() => {
     // Mock data
     const fetchData = () => {
